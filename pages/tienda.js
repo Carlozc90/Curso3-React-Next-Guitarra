@@ -1,11 +1,22 @@
 import Layout from "../components/Layout";
+import Listado from "../components/Listado";
 
-const tienda = () => {
+const tienda = ({ guitarras }) => {
   return (
     <Layout pagina="Tienda Virtual">
-      <h1>Aprenciendo Tienda</h1>
+      <main className="contenedor">Nuestra Coleccion</main>
+      <Listado guitarras={guitarras} />
     </Layout>
   );
 };
+
+export async function getServerSideProps() {
+  const url = `${process.env.API_URL}/guitarras`;
+  const respuesta = await fetch(url);
+  const guitarras = await respuesta.json();
+  return {
+    props: { guitarras },
+  };
+}
 
 export default tienda;
