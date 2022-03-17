@@ -68,7 +68,7 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProducto }) => {
                   <button
                     type="button"
                     className={styles.eliminar}
-                    onClick={() => eliminarProducto(producto._id)}
+                    ck={() => eliminarProducto(producto._id)}
                   >
                     X
                   </button>

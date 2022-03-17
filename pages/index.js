@@ -19,7 +19,7 @@ export default function Home({ guitarras, cursos, blog }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // Uso de multiplos await corriendo todos a la misma vez
 
   // const url = `${process.env.API_URL}/guitarras`;
